@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Simple CRUD</string>
+    <string name="saveButton">Save</string>
+    <string name="valueHint">Value</string>
+    <string name="descriptionHint">Description</string>
+    <string name="nameHint">Name</string>
+    <string name="addbutton">addButton</string>
 </resources>

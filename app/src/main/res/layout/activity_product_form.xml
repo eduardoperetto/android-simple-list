@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/activity_product_form_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.activity.ProductFormActivity">
+
+    <EditText
+        android:id="@+id/activity_product_form_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:hint="@string/nameHint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/activity_product_form_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/descriptionHint"
+        app:layout_constraintEnd_toEndOf="@+id/activity_product_form_name"
+        app:layout_constraintStart_toStartOf="@+id/activity_product_form_name"
+        app:layout_constraintTop_toBottomOf="@+id/activity_product_form_name" />
+
+    <EditText
+        android:id="@+id/activity_product_form_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/valueHint"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="@+id/activity_product_form_name"
+        app:layout_constraintStart_toStartOf="@+id/activity_product_form_name"
+        app:layout_constraintTop_toBottomOf="@+id/activity_product_form_description" />
+
+    <Button
+        android:id="@+id/activity_product_form_saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/saveButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_product_form_value"
+        app:layout_constraintVertical_bias="1"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,5 +1,6 @@
 package com.eduardoperetto.simplecrud.ui.recyclerview
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -11,16 +12,18 @@ import com.eduardoperetto.simplecrud.models.Product
 
 class ProductListAdapter(
     private val context: Context,
-    private val products: List<Product>
+    products: List<Product>
 ) : RecyclerView.Adapter<ProductListAdapter.ViewHolder>() {
+
+    private val products = products.toMutableList()
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(product: Product) {
-            val name = itemView.findViewById<TextView>(R.id.name)
+            val name = itemView.findViewById<TextView>(R.id.product_item_name)
             name.text = product.name
-            val description = itemView.findViewById<TextView>(R.id.description)
+            val description = itemView.findViewById<TextView>(R.id.product_item_description)
             description.text = product.description
-            val value = itemView.findViewById<TextView>(R.id.value)
+            val value = itemView.findViewById<TextView>(R.id.product_item_value)
             value.text = product.value.toPlainString()
         }
     }
@@ -37,5 +40,12 @@ class ProductListAdapter(
     }
 
     override fun getItemCount(): Int = products.size
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun setProducts(products: List<Product>) {
+        this.products.clear()
+        this.products.addAll(products)
+        notifyDataSetChanged()
+    }
 
 }
